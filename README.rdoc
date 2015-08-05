@@ -2,6 +2,7 @@
 
 Coder Manual Project Application
 Subsciption-Based Web Application
+http//codermanual.com
 
 Things you may want to cover:
 
