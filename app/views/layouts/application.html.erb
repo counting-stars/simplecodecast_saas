@@ -3,11 +3,13 @@
 <head>
   <title>Dev Match</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag "https://js.stripe.com/v2/", type: 'text/javascript' %>
   <%= javascript_include_tag 'application' %>
+  
   <%= csrf_meta_tags %>
 </head>
-<body>
 
+<body>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class='container'>
     <div class="navbar-header">
@@ -17,18 +19,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
-        <%= link_to root_path, class: 'navbar-brand' do %>
+      <%= link_to root_path, class: 'navbar-brand' do %>
         <i class="fa fa-users"></i>
-          Dev Match
-        <% end %>
+        Dev Match
+      <% end %>
     </div>
     <div class="collapse navbar-collapse" id="main-nav-collapse">
       <div class="nav navbar-nav navbar-right">
-        <% if current_user #true %>
+        <% if current_user %>
           <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary navbar-btn' %>
         <% else %>
-          <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
+          <%= link_to "Log In", new_user_session_path, class: 'btn btn-primary navbar-btn', method: :get %>
         <% end %>
       </div>
       <ul class="nav navbar-nav navbar-right">
@@ -38,13 +39,12 @@
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
-
-<div class:"container">
+<div class="container">
   <% flash.each do |key, value| %>
-     <%= content_tag :div, value, class: "alert alert-#{key}" %>
+    <%= content_tag :div, value, class: "alert alert-#{key}" %>
   <% end %>
   <%= yield %>
 </div>
-
 </body>
+
 </html>
