@@ -1,3 +1,4 @@
+
 body {
     // gradient from uiGradients.com
      background: -webkit-linear-gradient(90deg, #134E5E 10%, #71B280 90%); /* Chrome 10+, Saf5.1+ */
@@ -6,4 +7,10 @@ body {
   background:      -o-linear-gradient(90deg, #134E5E 10%, #71B280 90%); /* Opera 11.10+ */
   background:         linear-gradient(90deg, #134E5E 10%, #71B280 90%); /* W3C */
 
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
 }
